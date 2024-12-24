@@ -18,7 +18,7 @@
 # Script for donwloading and preparing UVG dataset from https://ultravideo.fi/dataset.html
 # Modify the ROOT to be the directory in which you would like to download the
 # data and convert it to png files.
-export ROOT="/tmp/uvg"
+export ROOT="/Users/shahdloo/Code/compression_data"
 
 video_names=(
     Beauty
@@ -32,6 +32,7 @@ video_names=(
 
 for vid in "${video_names[@]}"; do
   # Download video
+  echo ${ROOT}
   wget -P ${ROOT} https://ultravideo.fi/video/${vid}_1920x1080_120fps_420_8bit_YUV_RAW.7z
   # Unzip
   7z x ${ROOT}/${vid}_1920x1080_120fps_420_8bit_YUV_RAW.7z -o${ROOT}
